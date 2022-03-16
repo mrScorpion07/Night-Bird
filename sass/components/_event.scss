@@ -1,0 +1,149 @@
+@import '../mixins/mixin';
+@import '../variables/variable';
+
+/*==============================================
+                Events Part Start
+================================================*/
+#event {
+    .common_head {
+        padding: 5px 0 25px;
+        background: $bg;
+
+        h2 {
+            @include fs($white, 22px, 700, $dgl);
+            text-transform: uppercase;
+            padding-bottom: 3px;
+        }
+    }
+
+    .event_bg {
+        padding: 40px 0 40px;
+        position: relative;
+        z-index: 1;
+
+        &::after {
+            @include after_tl(1px, 0, 100%, 99.1%, rgba(0, 0, 0, 0.9));
+            z-index: -1;
+        }
+
+        .event_slide {
+            position: relative;
+
+            .event_text {
+                h3 {
+                    @include fs($white, 16px, 400, $my);
+                    text-transform: uppercase;
+                    padding-bottom: 10px
+                }
+
+                h6 {
+                    @include fs($ash, 13px, 400, $my);
+                    padding-bottom: 35px;
+                }
+
+                p {
+                    @include fs($ash, 14px, 400, $my);
+                    line-height: 22px;
+                    padding-bottom: 30px;
+                    width: 570px;
+                }
+
+                h5 {
+                    @include fs($white, 14px, 400, $my);
+
+                    span {
+                        padding-left: 12px;
+                    }
+                }
+
+                .event_r {
+                    ul {
+                        display: flex;
+                        flex-wrap: wrap;
+                        padding-top: 45px;
+
+                        li {
+                            width: 72px;
+                            height: 72px;
+                            border-radius: 50%;
+                            background: $white;
+                            text-align: center;
+                            line-height: 72px;
+                            @include fs($hover, 16px, 700, $dgl);
+                            margin-left: 10px;
+                            margin-right: 10px;
+
+                            // position: relative;
+                            &:first-child {
+                                margin-left: 0
+                            }
+
+                            span {
+                                @include fs($hover, 16px, 700, $dgl);
+                                // display: block;
+                                // position: absolute;
+                                // left: 50%;
+                                // bottom: -35px;
+                                // transform: translate(-50%, -50%);
+                                // text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .slick-slide {
+                padding: 0 20px;
+            }
+
+            .nxt_arr {
+                position: absolute;
+                right: 30px;
+                top: 50%;
+                background: $hover;
+                transform: translateY(-50%);
+                text-align: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                line-height: 50px;
+                cursor: pointer;
+                z-index: 99;
+                font-size: 22px;
+                color: white;
+                transition: all linear .3s;
+                &:hover {
+                    background: black;
+                    color: $hover;
+                }
+
+            }
+
+
+            .prv_arr {
+                position: absolute;
+                left: 30px;
+                top: 50%;
+                background: $hover;
+                transform: translateY(-50%);
+                text-align: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                line-height: 50px;
+                cursor: pointer;
+                z-index: 99;
+                font-size: 22px;
+                color: white;
+                transition: all linear .3s;
+                &:hover {
+                    background: black;
+                    color: $hover;
+                }
+            }
+        }
+    }
+}
+/*==============================================
+                Evnets Part End
+================================================*/

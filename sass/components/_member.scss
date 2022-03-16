@@ -1,0 +1,119 @@
+@import '../mixins/mixin';
+@import '../variables/variable';
+
+/*==============================================
+                Member Part Start
+================================================*/
+#member {
+    padding: 80px 0 80px;
+    background: $bg;
+
+    .common_head {
+        padding-bottom: 30px;
+
+        h2 {
+            @include fs($white, 22px, 700, $dgl);
+            text-transform: uppercase;
+        }
+    }
+
+    .box {
+        margin-top: 60px;
+        position: relative;
+        padding: 20px 0 20px;
+        background: #353535;
+        z-index: 1;
+        transition: all linear .3s;
+        &::after {
+            @include after_tl(114px, 0, 100%, 2px, $white);
+            z-index: -1;
+            transition: all linear .3s
+        }
+
+        h3 {
+            @include fs($white, 22px, 700, $dgl);
+            text-transform: capitalize;
+            padding-bottom: 20px;
+
+        }
+
+        p {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: $white;
+            text-align: center;
+            line-height: 100px;
+            // position: absolute;
+            // left: 50%;
+            // transform: translateX(-50%);
+            @include fs($hover, 22px, 700, $open);
+            // margin-left: 28%;
+            transition: all linear .3s;
+            span {
+                @include fs($hover, 13px, 700, $open);
+                text-transform: lowercase;
+                transition: all linear .3s;
+            }
+        }
+
+        ul {
+            padding-top: 20px;
+
+            li {
+                @include fs($ash, 14px, 400, $open);
+                padding-bottom: 20px;
+            }
+        }
+
+        .btn2 {
+            // width: 190% !important;
+            background: $white;
+            // padding-left: 0 !important;
+            // padding-right: 0 !important;
+            // margin-left: -101px;
+            height: 0px;
+            line-height: 40px;
+            transition: all linear .3s;
+            // padding: 5px !important;
+            transform: scaleY(0);
+            a {
+                @include fs($hover, 16px, 700, $dgl);
+                text-transform: uppercase;
+                transition: all linear .3s;
+                visibility: hidden;
+            }
+        }
+        &:hover{
+            transform: translateY(-40px);
+            padding-bottom: 40px;
+            &::after{
+                background: $hover;
+            }
+            h3{
+                color: $hover;
+            }
+            p{
+                background: $hover;
+                color: $white;
+                span{
+                    color: white;
+                }
+            }
+            .btn2{
+                // width: 190% !important;
+                background: $hover;
+                height: 40px;
+                transform: scaleY(1);
+                cursor: pointer;
+                a{
+                    color: $white;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+/*==============================================
+                Member Part End
+================================================*/

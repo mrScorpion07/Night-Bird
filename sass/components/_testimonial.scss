@@ -1,0 +1,151 @@
+@import '../mixins/mixin';
+@import '../variables/variable';
+
+/*==============================================
+                Testimonial Part Start
+================================================*/
+#test {
+    .common_head {
+        padding: 5px 0 25px;
+        background: $bg;
+
+        h2 {
+            @include fs($white, 22px, 700, $dgl);
+            text-transform: uppercase;
+            padding-bottom: 3px;
+        }
+    }
+
+    .img_test {
+        position: relative;
+
+        .test_img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    .test_bg {
+        padding: 96px 0 96px;
+        position: relative;
+        z-index: 1;
+
+        &::after {
+            @include after_tl(1px, 0, 100%, 99.4%, rgba(0, 0, 0, 0.9));
+            z-index: -1;
+        }
+
+        .test_box {
+            padding: 30px 35px 35px 30px;
+            background: #353535;
+            position: relative;
+            z-index: 1;
+
+            &::after {
+                position: absolute;
+                content: '';
+                left: -20px;
+                top: 43%;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                border-top: 20px solid #353535;
+                border-left: 20px solid #353535;
+                border-right: 20px solid #353535;
+                border-bottom: 20px solid #353535;
+                border-top-left-radius: 10px;
+                -webkit-transform: rotate(-46deg);
+                transform: rotate(-46deg);
+                z-index: -1;
+            }
+
+
+
+
+            h2 {
+                @include fs($white, 16px, 700, $open);
+                text-transform: uppercase;
+                padding-bottom: 4px
+            }
+
+            span {
+                @include fs($ash, 14px, 400, $open);
+            }
+
+            ul {
+                padding-top: 3px;
+
+                li {
+                    padding: 0 2px;
+                    color: $hover;
+
+                    &:first-child {
+                        padding-left: 0;
+                    }
+                }
+            }
+
+            p {
+                @include fs($ash, 14px, 400, $open);
+                line-height: 22px;
+                padding-top: 25px;
+            }
+        }
+    }
+
+    .slick-slide {
+        padding: 0 20px;
+    }
+
+    .nxt_arr {
+        position: absolute;
+        right: 30px;
+        top: 85%;
+        background: $hover;
+        transform: translateY(-50%);
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        line-height: 50px;
+        cursor: pointer;
+        z-index: 99;
+        font-size: 22px;
+        color: white;
+        transition: all linear .3s;
+
+        &:hover {
+            background: black;
+            color: $hover;
+        }
+
+    }
+
+
+    .prv_arr {
+        position: absolute;
+        left: 30px;
+        top: 82%;
+        background: $hover;
+        transform: translateY(-50%);
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        line-height: 50px;
+        cursor: pointer;
+        z-index: 99;
+        font-size: 22px;
+        color: white;
+        transition: all linear .3s;
+
+        &:hover {
+            background: black;
+            color: $hover;
+        }
+    }
+}
+
+/*==============================================
+                Testimonial Part End
+================================================*/

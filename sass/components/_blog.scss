@@ -1,0 +1,187 @@
+@import '../mixins/mixin';
+@import '../variables/variable';
+
+/*==============================================
+                Blog Part Start
+================================================*/
+#blog {
+    padding: 70px 0 70px;
+    background: $bg;
+
+    .common_head {
+        padding-bottom: 30px;
+
+        h2 {
+            @include fs($white, 22px, 700, $dgl);
+            text-transform: uppercase;
+        }
+    }
+
+    .blog_card {
+        padding-top: 60px;
+        transition: all linear .3s;
+        overflow: hidden;
+        // padding: 0 2px;
+        padding-left: 2px;
+        padding-right: 2px;
+        .blog_img {
+            position: relative;
+
+            .overlay {
+                @include after_tl(50%, 50%, 100%, 100%, rgba(255, 95, 130, 0.6));
+                transform: translate(-50%, -50%) scaleY(0);
+                border: 8px solid rgba(255, 255, 255, 0.6);
+                transition: all linear .3s;
+
+                a {
+                    @include middle();
+
+                    i {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background: white;
+                        text-align: center;
+                        line-height: 40px;
+                        color: $hover;
+                        transition: all linear .3s;
+
+                        &:hover {
+                            background: $bg;
+                        }
+                    }
+                }
+            }
+        }
+
+        .blog_text {
+            padding: 0 30px 0px;
+            border: 1px solid #222;
+            border-top: none;
+            transition: all linear .3s;
+
+            h2 {
+                @include fs($white, 16px, 600, $dgl);
+                text-transform: uppercase;
+                padding-top: 28px;
+                padding-bottom: 11px;
+            }
+
+            h5 {
+                @include fs($ash, 13px, 400, $open);
+                padding-bottom: 28px;
+            }
+
+            p {
+                @include fs($ash, 14px, 400, $open);
+                line-height: 22px;
+                width: 310px;
+                margin: 0 auto;
+                // padding-bottom: 28px;
+                transition: all linear .3s;
+            }
+
+            a {
+                padding: 10px 20px;
+                border: 2px solid $hover;
+                line-height: 1;
+                @include fs($white, 16px, 600, $dgl);
+                transition: all linear .3s;
+                position: relative;
+                z-index: 1;
+                transform: scale(0);
+
+
+                &::after {
+                    @include after_tl(0, 0, 3px, 100%, $hover);
+                    transition: all linear .3s;
+                    z-index: -1;
+                }
+
+                &:hover {
+                    &::after {
+                        width: 100%;
+                    }
+
+                }
+            }
+        }
+
+        &:hover {
+            transform: translateY(-40px);
+
+            .overlay {
+                transform: translate(-50%, -50%) scaleY(1);
+            }
+
+            .blog_text {
+                padding-bottom: 30px;
+
+                p {
+                    padding-bottom: 28px;
+                }
+
+                a {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+
+    .slick-slide {
+        padding: 0 10px;
+    }
+
+    .nxt_arr {
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        background: $hover;
+        transform: translateY(-50%);
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        line-height: 50px;
+        cursor: pointer;
+        z-index: 99;
+        font-size: 22px;
+        color: white;
+        transition: all linear .3s;
+
+        &:hover {
+            background: black;
+            color: $hover;
+        }
+
+    }
+
+
+    .prv_arr {
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        background: $hover;
+        transform: translateY(-50%);
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        line-height: 50px;
+        cursor: pointer;
+        z-index: 99;
+        font-size: 22px;
+        color: white;
+        transition: all linear .3s;
+
+        &:hover {
+            background: black;
+            color: $hover;
+        }
+    }
+   
+}
+
+/*==============================================
+                Blog Part End
+================================================*/
